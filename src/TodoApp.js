@@ -1,6 +1,5 @@
 import React from "react";
 import { CssBaseline, Paper, Typography, FormControl, InputLabel, Input, TextField, Button } from "@material-ui/core";
-import logo from './logo.svg';
 import {TodoList} from "./TodoList";
 
 export class TodoApp extends React.Component {
@@ -20,10 +19,6 @@ export class TodoApp extends React.Component {
             <div className="App">
                 <CssBaseline/>
                 <Paper className="paper2">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">TODO React App</h1>
-                </header>
 
                 <br/>
                 <br/>
