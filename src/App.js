@@ -2,13 +2,17 @@ import React, {Component} from 'react';
 import './App.css';
 import { Login } from './component/Login';
 import { TodoApp } from "./TodoApp";
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import { AppBar, Tabs, Tab } from "@material-ui/core";
 
 class App extends Component {
-
     render() {
+
+        if (localStorage.getItem("isLoggedIn") == null) {
+            localStorage.setItem("isLoggedIn", false);
+        }
+
         return (
             <Router>
                 <div className="App">
@@ -37,6 +41,7 @@ class App extends Component {
             </Router>
         );
     }
+
 }
 
 const LoginView = () => (
@@ -49,6 +54,5 @@ const TodoView = () => (
     </div>
 );
 
-var isLoggedIn = false;
-
 export default App;
+

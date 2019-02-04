@@ -1,6 +1,7 @@
 import React from "react";
 import { CssBaseline, Paper, Typography, FormControl, InputLabel, Input, TextField, Button } from "@material-ui/core";
 import {TodoList} from "./TodoList";
+import { Redirect } from 'react-router-dom';
 
 export class TodoApp extends React.Component {
     constructor(props) {
@@ -14,9 +15,14 @@ export class TodoApp extends React.Component {
 
 
     render() {
-
+        if (localStorage.getItem("isLoggedIn") === "false") {
+            redirect = "/";
+        } else {
+            redirect = "/todo";
+        }
         return (
             <div className="App">
+                <Redirect to={redirect}/>
                 <CssBaseline/>
                 <Paper className="paper2">
 
@@ -121,3 +127,5 @@ export class TodoApp extends React.Component {
     }
 
 }
+
+var redirect;
